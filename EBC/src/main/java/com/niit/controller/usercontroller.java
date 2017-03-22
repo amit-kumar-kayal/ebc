@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.dao.cartdao;
 import com.niit.dao.productdao;
 import com.niit.dao.userdao;
 import com.niit.model.cart;
@@ -35,6 +36,11 @@ public class usercontroller {
 	userdao ud;  
 	@Autowired
 	private HttpSession session;
+	@Autowired
+	cartdao cd;
+	product p;
+	user u;
+	cart c;
 	@RequestMapping(value = "/sign", method = RequestMethod.POST)
 	public ModelAndView validCredential(@RequestParam("email") String email,@RequestParam("password") String password)
 	{
@@ -52,14 +58,16 @@ public class usercontroller {
 				ModelAndView mv=new ModelAndView("admin");
 				 u=ud.getbyemail(email);
 				 mv.addObject("adminmsg", "welcome to admin");
-				session.setAttribute("content", u.getUsername());
+				
+				session.setAttribute("am", u.getUsername());
 				return mv;
 			}
 			else{
 				ModelAndView mv=new ModelAndView("home");
 				u=ud.getbyemail(email);
-				
+				session.setAttribute("sm", u.getEmail());
 			session.setAttribute("content", u.getUsername());
+			
 				return mv;
 			}
 		
@@ -76,7 +84,7 @@ public class usercontroller {
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
 	public String addPro7(@ModelAttribute("p") user p,HttpServletRequest request) {
 		ud.insert(p);
-		
+		session.setAttribute("mv","insert user details");
 		return "redirect:/login";
 	}
 	
@@ -111,12 +119,67 @@ public class usercontroller {
 		m.addObject("a", p);
 		return m;
 	}
-
-	@RequestMapping(value = "cart/{var}")
-	public ModelAndView singles(@PathVariable("var") int var) {
-		ModelAndView m = new ModelAndView("cart");
-		product p = prodao.getproductid(var);
-		m.addObject("p", p);
-		return m;
+	@RequestMapping(value = "/myCart/add/{productid}" ,method = RequestMethod.POST)
+	public ModelAndView getCart(@PathVariable("productid") int productid,@RequestParam("quantity") int qty) {
+		if(session.getAttribute("mv")==null && session.getAttribute("sm")==null ){
+			ModelAndView mv=new ModelAndView("forward:/view/"+productid);
+			product obj=prodao.getproductid(productid);
+			mv.addObject("p",obj);
+			mv.addObject("b4cart", "Please signup or login before adding item to the cart... ");
+			return mv;
+			}
+	
+		else{
+			String mail=session.getAttribute("sm").toString();
+			System.out.println(mail);
+                                             			
+			if(cd.sameproduct(mail,productid)==true){
+				ModelAndView mv=new ModelAndView("forward:/view/"+productid);
+				mv.addObject("msg", "products are already in the cart , please continue shopping or checkout!!!");
+				return mv;
+			}
+			else
+				p = prodao.getproductid(productid);
+			    cart c=new cart();
+				c.setProductname(p.getProductname()); 
+				c.setProductprice(p.getProductprice());  
+				c.setProductid(p.getProductid());
+				c.setQuantity(qty);
+				c.setTotalprice((p.getProductprice())*(qty));
+				
+				c.setEmail(mail);
+				cd.insert(c);
+				
+				ModelAndView mv=new ModelAndView("forward:/cart");
+				mv.addObject("mssg",  "product is added succesfully in the cart!!");
+				return mv;
+			}
+			
+		}
+	@RequestMapping("/cart")
+	public ModelAndView showCart(){
+		ModelAndView mv=new ModelAndView("cart");
+		String mail=session.getAttribute("sm").toString();
+		List<cart>obj=cd.getallcartbyuser(mail);
+		mv.addObject("p",obj);
+		return mv;
 	}
+	@RequestMapping("/billingaddress/{var}")
+	public ModelAndView billing(@PathVariable ("var")String var){
+		ModelAndView mv=new ModelAndView("billingaddress");
+		user c=ud.getbyemail(var);
+		mv.addObject("p",c);
+		return mv;
+	}
+	 @RequestMapping(value="deletes/{n}")
+	 public String deletes(@PathVariable("n")int n) {
+	cd.delete(cd.getcartbyid(n));
+	     return "redirect:/cart";
+	 }
+	 
+	 @RequestMapping(value="/buy",method=RequestMethod.POST)
+		public String addPrs(@ModelAttribute("p")user p,HttpServletRequest request){
+			ud.update(p);
+			return "redirect:/billingaddress";
+	 }
 }

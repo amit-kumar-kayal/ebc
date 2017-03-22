@@ -42,5 +42,9 @@ public class userdaoimpl implements userdao {
 			return true;
 		}
 	}
+
+	public void update(user p) {
+		sessionFactory.getCurrentSession().update(p);
+	}
 	
 }

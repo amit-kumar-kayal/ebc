@@ -2,6 +2,7 @@ package com.niit.dao;
 
 import java.util.List;
 
+import com.niit.model.product;
 import com.niit.model.user;
 
 public interface userdao {
@@ -9,5 +10,5 @@ public interface userdao {
 	public user getbyemail(String email);
 	public List getAllNames();
 	public boolean isvalid(String email,String password);
-	
+	public void update(user p);
 }

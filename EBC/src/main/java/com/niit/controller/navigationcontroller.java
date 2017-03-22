@@ -26,12 +26,12 @@ public class navigationcontroller {
 		return "productfrom";
 
 	}
-//	@RequestMapping("/admin")
-//	public String asa()
-//	{
-//		return "admin";
-//
-//	}
+	@RequestMapping("/aboutus")
+	public String asa()
+	{
+		return "aboutus";
+
+	}
 	@RequestMapping("/contactus")
 	public String asam()
 	{
@@ -44,16 +44,16 @@ public class navigationcontroller {
 		return "signup";
 
 	}
-	@RequestMapping("/single")
-	public String asama()
-	{
-		return "single";
-
-	}
-	@RequestMapping("/cart")
-	public String asamas()
-	{
-		return "cart";
-
-	}
+//	@RequestMapping("/single")
+//	public String asama()
+//	{
+//		return "single";
+//
+//	}
+//	@RequestMapping("/cart")
+//	public String asamas()
+//	{
+//		return "cart";
+//
+//	}
 }

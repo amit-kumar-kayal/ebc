@@ -91,6 +91,7 @@ public class homecontroller {
 	 prodao.delete(prodao.getproductid(n));
 	     return "redirect:/productdetails";
 	 }
+	 
 	 @RequestMapping(value="editing/{var}")
 	 public ModelAndView edit(@PathVariable ("var")int var)
 	 {

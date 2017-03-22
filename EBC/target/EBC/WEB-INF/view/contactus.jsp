@@ -54,7 +54,7 @@
 <li><a href="${req}/userdetails">All product</a></li>
 </ul>
 </li>
-<li><a href="${req}/contactus">About us</a></li>
+<li><a href="${req}/aboutus">About us</a></li>
 <li><a href="${req}/contactus">Contact us</a></li>
 </ul>
 <form class="navbar-form navbar-left">
@@ -77,7 +77,7 @@
 <c:if test="${not empty content}">
 <ul class="nav navbar-nav navbar-right">
 <li><a href="#">${content}</a></li>
-<<li><a href="#">
+<<li><a href="${req}/cart">
           <span class="glyphicon glyphicon-shopping-cart"></span>cart
         </a></li>
              <li><a href="${req}/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
@@ -173,10 +173,10 @@ Email Address:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cf
 </div>
     <div class="col-sm-6">
 <ul class="pull-right">
-<li><a href="#">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Faq</a></li>
-<li><a href="#">Contact Us</a></li>
+<li><a href="${req}/home">Home</a></li>
+<li><a href="${req}/aboutus">About Us</a></li>
+<li><a href="${req}/signup">Sign up</a></li>
+<li><a href="${req}/contactus">Contact Us</a></li>
 </ul>
 </div>
 </div>

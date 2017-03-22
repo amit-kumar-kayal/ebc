@@ -54,7 +54,7 @@
 <li><a href="${req}/userdetails">All product</a></li>
 </ul>
 </li>
-<li><a href="${req}/contactus">About us</a></li>
+<li><a href="${req}/aboutus">About us</a></li>
 <li><a href="${req}/contactus">Contact us</a></li>
 </ul>
 <form class="navbar-form navbar-left">
@@ -74,10 +74,10 @@
         <li><a href="${req}/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
 </c:if>
-<c:if test="${not empty logedin}">
+<c:if test="${not empty content}">
 <ul class="nav navbar-nav navbar-right">
-<li><a href="#">${logedin}</a></li>
-<<li><a href="#">
+<li><a href="#">${content}</a></li>
+<<li><a href="${req}/cart">
           <span class="glyphicon glyphicon-shopping-cart"></span>cart
         </a></li>
              <li><a href="${req}/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
@@ -117,7 +117,7 @@ colour:white;
 
 <c:forEach items="${a}" var="pro">
 <tr>
-<td><img alt="" src="${req}/resources/images/product/${pro.productid}.jpg" height="100px" width="100px"/></td>
+<td><img alt="" src="${req}/resources/images/product/${pro.productid}.jpg" height="100px" width="100px"style="width:auto; style=hight:auto"/></td>
  
 <td>${pro.productname}</td>
 <td>${pro.productprice}</td>
@@ -145,10 +145,10 @@ colour:white;
 </div>
     <div class="col-sm-6">
 <ul class="pull-right">
-<li><a href="#">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Faq</a></li>
-<li><a href="#">Contact Us</a></li>
+<li><a href="${req}/home">Home</a></li>
+<li><a href="${req}/aboutus">About Us</a></li>
+<li><a href="${req}/signup">Sign up</a></li>
+<li><a href="${req}/contactus">Contact Us</a></li>
 </ul>
 </div>
 </div>

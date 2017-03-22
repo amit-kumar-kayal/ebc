@@ -47,7 +47,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
 <bean id="prodao" class="com.niit.impl.productdaoimpl" />
  <bean id="ud" class="com.niit.impl.userdaoimpl" /> 
- 
+ <bean id="cd" class="com.niit.impl.cartdaoimpl" />  
 </beans>
 
 

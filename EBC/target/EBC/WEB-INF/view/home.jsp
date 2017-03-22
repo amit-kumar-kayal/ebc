@@ -40,7 +40,7 @@
    
     </div>
     <ul class="nav navbar-nav">
-    <li class="active" style="font-family:'Sonsie One';"><a href="${req}/home">electronic bazar.com</a></li>
+    <li class="active" style="font-family:'Sonsie One'" style="font-colour:'green'";><a href="${req}/home">electronic bazar.com</a></li>
 <li><a href="${req}/home">Home</a></li>
 
 <li class="dropdown">
@@ -53,7 +53,7 @@
 <li><a href="${req}/userdetails">All product</a></li>
 </ul>
 </li>
-<li><a href="${req}/contactus">About us</a></li>
+<li><a href="${req}/aboutus">About us</a></li>
 <li><a href="${req}/contactus">Contact us</a></li>
 </ul>
 <form class="navbar-form navbar-left">
@@ -66,7 +66,6 @@
         </div>
       </div>
     </form>
-
 <c:if test="${empty content}">
  <ul class="nav navbar-nav navbar-right">
         <li><a href="${req}/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -76,12 +75,12 @@
 <c:if test="${not empty content}">
 <ul class="nav navbar-nav navbar-right">
 <li><a href="#">${content}</a></li>
-<<li><a href="#">
+<<li><a href="${req}/cart">
           <span class="glyphicon glyphicon-shopping-cart"></span>cart
         </a></li>
-             <li><a href="${req}/login"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+             <li><a href="${req}/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
         </ul>
-</c:if>--%>
+</c:if>
 </div>
 </div> 
 </nav> 
@@ -136,22 +135,22 @@ color: white;
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="resources/image/cal7.png" alt="Chania" class="img-responsive" >
+        <img src="resources/image/cal7.png" alt="" class="img-responsive" >
       </div>
 
       <div class="item">
-        <img src="resources/image/cal8.jpg" alt="Chania" class="img-responsive">
+        <img src="resources/image/cal8.jpg" alt="" class="img-responsive">
       </div>
     
       <div class="item">
-        <img src="resources/image/cal9.jpg" alt="Flower" class="img-responsive" >
+        <img src="resources/image/cal9.jpg" alt="" class="img-responsive" >
       </div>
 
       <div class="item">
-        <img src="resources/image/cal10.jpg" alt="Flower" class="img-responsive">
+        <img src="resources/image/cal10.jpg" alt="" class="img-responsive">
       </div>
 	<div class="item">
-        <img src="resources/image/cal11.jpg" alt="Flower" class="img-responsive">
+        <img src="resources/image/cal11.jpg" alt="" class="img-responsive">
       </div>
     </div>
 
@@ -218,10 +217,10 @@ color: white;
 </div>
     <div class="col-sm-6">
 <ul class="pull-right">
-<li><a href="#">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Login</a></li>
-<li><a href="#">Contact Us</a></li>
+<li><a href="${req}/home">Home</a></li>
+<li><a href="${req}/aboutus">About Us</a></li>
+<li><a href="${req}/signup">Sign up</a></li>
+<li><a href="${req}/contactus">Contact Us</a></li>
 </ul>
 </div>
 </div>

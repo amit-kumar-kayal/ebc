@@ -54,7 +54,7 @@
 <li><a href="${req}/userdetails">All product</a></li>
 </ul>
 </li>
-<li><a href="${req}/contactus">About us</a></li>
+<li><a href="${req}/aboutus">About us</a></li>
 <li><a href="${req}/contactus">Contact us</a></li>
 </ul>
 <form class="navbar-form navbar-left">
@@ -77,7 +77,7 @@
 <c:if test="${not empty content}">
 <ul class="nav navbar-nav navbar-right">
 <li><a href="#">${content}</a></li>
-<<li><a href="#">
+<<li><a href="${req}/cart">
           <span class="glyphicon glyphicon-shopping-cart"></span>cart
         </a></li>
              <li><a href="${req}/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
@@ -151,13 +151,31 @@
 <input type="password" name="password" class="form-control" id="password" placeholder="Password">
 </div>
 </div>
- 
+<h2>Address</h2>
+<div class="form-group">
+<label for="address" class="col-sm-2 control-label">Address:</label>
+<div class="col-sm-6">
+<input type="text" name="address" class="form-control" id="address" placeholder="Address">
+</div>
+</div>
+ <div class="form-group">
+<label for="city" class="col-sm-2 control-label">City:</label>
+<div class="col-sm-6">
+<input type="text" name="city" class="form-control" id="city" placeholder="city">
+</div>
+</div>
+<div class="form-group">
+<label for="pincode" class="col-sm-2 control-label">Pin code:</label>
+<div class="col-sm-6">
+<input type="text" name="pincode" class="form-control" id="pincode" placeholder="Pin code">
+</div>
+</div>
 <div class="form-group">
 <div class="col-sm-offset-2 col-sm-10">
 <button type="submit" class="btn btn-primary" id="register">Register</button>
 </div>
 </div>
- 
+
 </form>
  
 </div><!-- end for class "row" -->
@@ -174,10 +192,10 @@
 </div>
     <div class="col-sm-6">
 <ul class="pull-right">
-<li><a href="#">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Faq</a></li>
-<li><a href="#">Contact Us</a></li>
+<li><a href="${req}/home">Home</a></li>
+<li><a href="${req}/aboutus">About Us</a></li>
+<li><a href="${req}/signup">Sign up</a></li>
+<li><a href="${req}/contactus">Contact Us</a></li>
 </ul>
 </div>
 </div>

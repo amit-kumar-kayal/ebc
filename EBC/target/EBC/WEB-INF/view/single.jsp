@@ -54,7 +54,7 @@
 <li><a href="${req}/userdetails">All product</a></li>
 </ul>
 </li>
-<li><a href="${req}/contactus">About us</a></li>
+<li><a href="${req}/aboutus">About us</a></li>
 <li><a href="${req}/contactus">Contact us</a></li>
 </ul>
 <form class="navbar-form navbar-left">
@@ -77,12 +77,12 @@
 <c:if test="${not empty content}">
 <ul class="nav navbar-nav navbar-right">
 <li><a href="#">${content}</a></li>
-<<li><a href="#">
+<<li><a href="${req}/cart">
           <span class="glyphicon glyphicon-shopping-cart"></span>cart
         </a></li>
              <li><a href="${req}/login"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
         </ul>
-</c:if>--%>
+</c:if>
 </div>
 </div> 
 </nav> 
@@ -93,24 +93,97 @@
     height: 120px;
 }
 </style>
- <div class="row">
-    <div class="col-sm-4" >
-    <img alt="" src="${req}/resources/images/product/${a.productid}.jpg" /><br>
-   <h2> price:${a.productprice}</h2>
-    <a href="${req}/cart/${a.productid}" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart
-        </a>
-        <a href="${req}/cart/${pro.productid}" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-flash"></span> buy now
-        </a>
-    </div>
-    <div class="col-sm-8" >
-    <h2>${a.productname}</h2>
-    <h2>${a.category}</h2>
-    <h2>Features</h2>
-    <p>${a.productdesc}</p>
-    </div>
-    </div>
+
+ <h3>${msg}</h3>
+<h4>${b4cart}</h4>
+	<div class="top2_wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+
+					<div class="top2 clearfix">
+
+
+						<br>
+						<h2 align="center">Specific Product Details</h2>
+						<hr height="5" style="color: purple" size="5" width="100%" />
+						<div class="container" style="height: 15%; width: 100%;">
+
+							<div style='float: left'>
+								<img
+									src="${req}/resources/images/product/${a.productid}.jpg"
+									width="210" height="270" style="width:auto; style=hight:auto" />
+							</div>
+							
+							<div style='float: right'>
+								<table class="table table-striped">
+									<thead>
+									
+										<tr>
+									
+											<th>Product</th>
+											<th>Details</th>
+						
+										</tr>
+									</thead>
+									<tbody>
+										
+										<tr>
+											<td align="center"><i>Code</i></td>
+											<td align="center"><i>${a.productid}</i></td>
+										</tr>
+										<tr>
+											<td align="center"><i>Category</i></td>
+											<td align="center"><i>${a.category}</i></td>
+										</tr>
+										<tr>
+											<td align="center"><i> Name</i></td>
+											<td align="center"><i>${a.productname}</i></td>
+										</tr>
+										<tr>
+											<td align="center"><i>Description</i></td>
+											<td align="center"><i>${a.productdesc}</i></td>
+										</tr>
+										<tr>
+											<td align="center"><i>Price</i></td>
+											<td align="center"><i>${a.productprice}</i></td>
+										</tr>
+									
+										<tr>
+											<td align="center"><i>Quantity </i></td>
+											<td>
+												<form action="${req}/myCart/add/${a.productid}" method="post">
+													<select name="quantity">
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+													</select>
+
+												<input type="submit" value="Add to cart" class="btn btn-info">
+												</form> 
+											</td>
+											 <td>
+                                                      <a href="${req}/billingaddress" class="btn btn-info btn-lg">
+                                                        <span class="glyphicon glyphicon-trash"></span> Buy now
+                                                        </a>
+									</tbody>
+									<tfoot>
+										<tr>
+
+											
+
+										</tr>
+									</tfoot>
+
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
 <!-- FOOTER -->
       <footer>
         
@@ -123,10 +196,10 @@
 </div>
     <div class="col-sm-6">
 <ul class="pull-right">
-<li><a href="#">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Faq</a></li>
-<li><a href="#">Contact Us</a></li>
+<li><a href="${req}/home">Home</a></li>
+<li><a href="${req}/aboutus">About Us</a></li>
+<li><a href="${req}/signup">Sign up</a></li>
+<li><a href="${req}/contactus">Contact Us</a></li>
 </ul>
 </div>
 </div>

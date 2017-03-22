@@ -53,7 +53,7 @@
 <li><a href="${req}/productdetails">All product</a></li>
 </ul>
 </li>
-<li><a href="${req}/contactus">About us</a></li>
+<li><a href="${req}/aboutus">About us</a></li>
 <li><a href="${req}/contactus">Contact us</a></li>
 </ul>
 <form class="navbar-form navbar-left">
@@ -82,6 +82,7 @@
 </div>
 </div> 
 </nav> 
+
 <style>
 .footer {
 colour:white;
@@ -91,7 +92,7 @@ colour:white;
 </style>
 
 <td style="vertical-align: middle;">
-    <h2 style="text-align: center;">"${adminmsg}"</h2>
+    <h2 style="text-align: center;">${adminmsg}</h2>
 </td>
 <td style="vertical-align: middle;">
     <p style="text-align: center;">Go to product inventory</p>
@@ -109,10 +110,10 @@ colour:white;
 </div>
     <div class="col-sm-6">
 <ul class="pull-right">
-<li><a href="#">Home</a></li>
-<li><a href="#">About Us</a></li>
-<li><a href="#">Faq</a></li>
-<li><a href="#">Contact Us</a></li>
+<li><a href="${req}/home">Home</a></li>
+<li><a href="${req}/aboutus">About Us</a></li>
+<li><a href="${req}/signup">Sign up</a></li>
+<li><a href="${req}/contactus">Contact Us</a></li>
 </ul>
 </div>
 </div>
