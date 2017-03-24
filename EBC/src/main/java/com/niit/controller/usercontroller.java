@@ -22,9 +22,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.dao.cartdao;
+import com.niit.dao.complaindao;
 import com.niit.dao.productdao;
 import com.niit.dao.userdao;
 import com.niit.model.cart;
+import com.niit.model.complain;
 import com.niit.model.product;
 import com.niit.model.user;
 
@@ -33,7 +35,9 @@ public class usercontroller {
 	@Autowired
 	productdao prodao;
 	@Autowired
-	userdao ud;  
+	userdao ud;
+	@Autowired
+	complaindao cod;
 	@Autowired
 	private HttpSession session;
 	@Autowired
@@ -41,6 +45,7 @@ public class usercontroller {
 	product p;
 	user u;
 	cart c;
+	complain co;
 	@RequestMapping(value = "/sign", method = RequestMethod.POST)
 	public ModelAndView validCredential(@RequestParam("email") String email,@RequestParam("password") String password)
 	{
@@ -84,8 +89,10 @@ public class usercontroller {
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
 	public String addPro7(@ModelAttribute("p") user p,HttpServletRequest request) {
 		ud.insert(p);
+		session.setAttribute("sm",p.getEmail());
 		session.setAttribute("mv","insert user details");
-		return "redirect:/login";
+		session.setAttribute("content", p.getUsername());
+		return "redirect:/home";
 	}
 	
 	@RequestMapping(value = "/logout")
@@ -176,10 +183,32 @@ public class usercontroller {
 	cd.delete(cd.getcartbyid(n));
 	     return "redirect:/cart";
 	 }
-	 
-	 @RequestMapping(value="/buy",method=RequestMethod.POST)
-		public String addPrs(@ModelAttribute("p")user p,HttpServletRequest request){
-			ud.update(p);
-			return "redirect:/billingaddress";
-	 }
+	 @RequestMapping(value="complain")
+	public ModelAndView comp(@ModelAttribute("co") complain co)
+	{
+		if(session.getAttribute("mv")==null && session.getAttribute("sm")==null )
+		{
+			ModelAndView mv=new ModelAndView("contactus");
+			mv.addObject("bflg", "Please signup or login before complain....");
+			return mv;
+		}
+
+		else{
+			String mail=session.getAttribute("sm").toString();
+			System.out.println(mail);
+			
+			cod.insert(co);
+			ModelAndView mv=new ModelAndView("forward:/prod");
+			mv.addObject("aflg",  "your complain success Fully lodge ....");
+			return mv;
+		}
+	}
+	 @RequestMapping(value="prod")
+		public ModelAndView showProdd(){
+			ModelAndView mv=new ModelAndView("contactus");
+			String mail=session.getAttribute("sm").toString();
+			List<complain>obj=cod.getallcomplainbyuser(mail);
+			mv.addObject("a",obj);
+			return mv;
+		}
 }

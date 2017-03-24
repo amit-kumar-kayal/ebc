@@ -37,7 +37,7 @@ colour:white;
                      <th>Total price</th> 
                       
                    </thead>
-                  
+								                  
 <c:set var="s" value="0"></c:set>
 <c:forEach items="${p}" var="pro">
 <c:set var="s" value="${s+pro.totalprice}"></c:set>

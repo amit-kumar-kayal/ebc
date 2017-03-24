@@ -17,10 +17,16 @@
 </head>
 <body>
 <%@include file="navbar.jsp" %>
+<td style="vertical-align: middle;">
+    <h2 style="text-align: center;">${bflg}</h2>
+</td>
+<td style="vertical-align: middle;">
+    <h2 style="text-align: center;">${aflg}</h2>
+</td>
  <section id="contact-info">
 <div class="center">
 <h2>How to Reach Us?</h2>
-<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+<p class="lead">Executive service 24*7 </p>
 </div>
 
 <ul class="row">
@@ -40,7 +46,7 @@ Email Address:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cf
 </div>
 </div>
 </section>  
-<section id="contact-page">
+  <section id="contact-page">
 <div class="container">
 <div class="center">
 <h2>Drop Your Message</h2>
@@ -48,11 +54,11 @@ Email Address:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cf
 </div>
 <div class="row contact-wrap">
 <div class="status alert alert-success" style="display: none"></div>
-<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="complain">
 <div class="col-sm-5 col-sm-offset-1">
 <div class="form-group">
 <label>Name *</label>
-<input type="text" name="name" class="form-control" required="required">
+<input type="text" name="fullname" class="form-control" required="required">
 </div>
 <div class="form-group">
 <label>Email *</label>
@@ -83,7 +89,19 @@ Email Address:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cf
 </form>
 </div> 
 </div> 
-</section> 
+</section>
+<div>
+<div class="container">
+<div class="row">
+<div class="page-header">
+<td style="vertical-align: middle;">
+    <h2 style="text-align: center;">Complain Details</h2>
+</td>
+</div>
+<c:forEach items="${a}" var="pro">
+<td>${pro.message}</td>
+</c:forEach>
+</div>
 <!-- FOOTER -->
       <footer>
         

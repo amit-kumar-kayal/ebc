@@ -75,20 +75,18 @@
 										<tr>
 											<td align="center"><i>Quantity </i></td>
 											<td>
-												<form action="${req}/myCart/add/${a.productid}" method="post">
+												<form id="addToCart" action="${req}/myCart/add/${a.productid}" method="post">
 													<select name="quantity">
 														<option value="1">1</option>
 														<option value="2">2</option>
 														<option value="3">3</option>
 													</select>
-
-												<input type="submit" value="Add to cart" class="btn btn-info">
 												</form> 
-											</td>
-											 <td>
-                                                      <a href="billingaddress/${sm}" class="btn btn-info btn-lg">
-                                                        <span class="glyphicon glyphicon-trash"></span> Buy now
-                                                        </a>
+												<button type="submit" value="addToCart" class="btn btn-info" Style ="font-size:14 px">Add to Cart</button>
+												<button type="button"float:right; class ="btn btn-danger"
+												Style ="font-size:14 px">Buy now</button>
+												</from>
+											
 									</tbody>
 									<tfoot>
 										<tr>

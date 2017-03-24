@@ -22,21 +22,22 @@ colour:white;
 <%@include file="navbar.jsp" %>
 <form:form action="${req}/edit" method="post" modelAttribute="p" enctype="multipart/form-data">
 File to upload: <input type="file" name="File"value={"${req}/resources/images/product/${pro.productid}.jpg">
-<input type="hidden" name="productid"value=${p.productid}><br>
+<input type="hidden" class="form-control"  name="productid"value=${p.productid}><br>
 name:
-<input type="text" name="productname"value=${p.productname}><br>
+<input type="text" class="form-control"  name="productname"value=${p.productname}><br>
 price:
-<input type="text" name="productprice"value=${p.productprice}><br>
+<input type="text" class="form-control"  name="productprice"value=${p.productprice}><br>
 category:<br>
- <input type="radio" name="category" value=${p.category}> Mobile <br>
-  <input type="radio" name="category" value=${p.category}>Lap top<br>
-  <input type="radio" name="category" value=${p.category}> air conditioner <br> 
- <input type="radio" name="category" value=${p.category}> refrigerator<br>
+ <input type="radio"  class="form-control"  name="category" value=${p.category}> Mobile <br>
+  <input type="radio" class="form-control"  name="category" value=${p.category}>Lap top<br>
+  <input type="radio" class="form-control"  name="category" value=${p.category}> air conditioner <br> 
+ <input type="radio" class="form-control"  name="category" value=${p.category}> refrigerator<br>
  Description :
-<input type="text" name="productdesc"value=${p.productdesc}><br>
+<input type="text" class="form-control" name="productdesc"value=${p.productdesc}><br>
 <input type="submit" value="Update">
  
 </form:form>
+
 </body>
 <!-- FOOTER -->
       <footer>

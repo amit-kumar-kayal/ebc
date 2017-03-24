@@ -60,9 +60,9 @@
 </ul>
 </li>
 <li><a href="${req}/aboutus">About us</a></li>
-<li><a href="${req}/contactus">Contact us</a></li>
+<li><a href="${req}/prod">Contact us</a></li>
 </ul>
-<form class="navbar-form navbar-left">
+<!-- <form class="navbar-form navbar-left">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search">
         <div class="input-group-btn">
@@ -71,7 +71,7 @@
           </button>
         </div>
       </div>
-    </form>
+    </form> -->
  
 </c:if>
 <c:if test="${not empty am}">
@@ -95,9 +95,9 @@
 </ul>
 </li>
 <li><a href="${req}/aboutus">About us</a></li>
-<li><a href="${req}/contactus">Contact us</a></li>
+<li><a href="${req}/prod">Contact us</a></li>
 </ul>
-<form class="navbar-form navbar-left">
+<!--  <form class="navbar-form navbar-left">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search">
         <div class="input-group-btn">
@@ -106,7 +106,7 @@
           </button>
         </div>
       </div>
-    </form>
+    </form> -->
 </c:if>
  <c:if test="${(empty content)&&(empty am)}">
  <ul class="nav navbar-nav navbar-right">

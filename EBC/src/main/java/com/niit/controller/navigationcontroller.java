@@ -44,12 +44,12 @@ public class navigationcontroller {
 		return "signup";
 
 	}
-//	@RequestMapping("/single")
-//	public String asama()
-//	{
-//		return "single";
-//
-//	}
+	@RequestMapping("/thankyou")
+	public String asama()
+	{
+		return "thankyou";
+
+	}
 //	@RequestMapping("/cart")
 //	public String asamas()
 //	{

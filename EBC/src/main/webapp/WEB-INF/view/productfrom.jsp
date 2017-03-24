@@ -21,19 +21,51 @@ colour:white;
 <body>
 <%@include file="navbar.jsp" %>
 <form:form action="success" method="post" modelAttribute="p" enctype="multipart/form-data">
-File to upload: <input type="file" name="File">
-name:
-<input type="text" name="productname"><br>
-price:
-<input type="text" name="productprice"><br>
-<h2>category</h2>
-  <input type="radio" name="category" value="mobile"> Mobile <br>
-  <input type="radio" name="category" value="laptop">Lap top<br>
-  <input type="radio" name="category" value="airconditioner"> air conditioner <br> 
- <input type="radio" name="category" value="refrigator"> refrigator<br> 
-Description :
-<input type="text" name="productdesc"><br>
-<input type="submit" value="Add">
+
+<div class="container">
+
+  <form class="form-horizontal">
+  <div class="form-group">
+ <label class="control-label col-sm-2">Product Name:</label>
+  <div class="col-sm-10">
+ <input type="text" class="form-control" name="productname"/><br>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <label class="control-label col-sm-2">Product Price:</label>
+  <div class="col-sm-10">
+  <input type="text" class="form-control" name="productprice"/><br>
+</div>
+</div>
+
+ <div class="form-group">
+ <label class="control-label col-sm-2">Product Category:</label><br>
+  <div class="col-sm-10">
+ <input type="radio"  name="category" value="mobile"> Mobile </input> 
+ <input type="radio"  name="category" value="laptop">Lap top </input>
+ <input type="radio"  name="category" value="airconditioner"> air conditioner </input>
+ <input type="radio"  name="category" value="refrigator"> refrigator </input>
+ </div>
+ </div>
+
+<div class="form-group">
+ <label class="control-label col-sm-2">Product Details:</label>
+  <div class="col-sm-10">
+ <input type="text" class="form-control" name="productdesc"/><br>
+ </div>
+ </div>
+ 
+<div class="form-group">
+ <label class="control-label col-sm-2">Product Picture:</label>
+  <div class="col-sm-10">
+<input type="file" class="form-control"  name="File"/><br>
+
+<input type="submit" value="Submit">
+</div>
+</div>
+</form>
+</div>
 </form:form>
 
 
