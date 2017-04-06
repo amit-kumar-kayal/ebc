@@ -9,4 +9,6 @@ public interface complaindao {
 public void insert(complain c);
 public List<complain>getall();
 public List<complain> getallcomplainbyuser(String mail);
+public void delete (complain c);
+public complain getbyid(int id);
 }

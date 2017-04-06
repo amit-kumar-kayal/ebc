@@ -19,6 +19,7 @@
 <%@include file="navbar.jsp" %>
  <h3>${msg}</h3>
 <h4>${b4cart}</h4>
+<h3>${bflgs}</h3>
 	<div class="top2_wrapper">
 		<div class="container">
 			<div class="row">
@@ -81,12 +82,13 @@
 														<option value="2">2</option>
 														<option value="3">3</option>
 													</select>
+													<button type="submit" value="addToCart" class="btn btn-info" Style ="font-size:14 px" >Add to Cart</button>
+	<a href="${req}/buy/${a.productid}" class="btn btn-info "Style ="font-size:14 px">
+          <span class="glyphicon glyphicon-eye-open"></span> buy now
+        </a>
 												</form> 
-												<button type="submit" value="addToCart" class="btn btn-info" Style ="font-size:14 px">Add to Cart</button>
-												<button type="button"float:right; class ="btn btn-danger"
-												Style ="font-size:14 px">Buy now</button>
-												</from>
-											
+												</td>
+										<td>	</td>
 									</tbody>
 									<tfoot>
 										<tr>
@@ -105,7 +107,7 @@
 			</div>
 		</div>
 	</div>
-<!-- FOOTER -->
+<%-- <!-- FOOTER -->
       <footer>
         
 <div class= "container">
@@ -129,8 +131,8 @@
 
 
     </div><!-- /.container -->
-
-
+ --%>
+<%@include file="footer.jsp" %>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

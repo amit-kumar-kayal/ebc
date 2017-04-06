@@ -21,7 +21,7 @@
 <div class="row">
 <div class="page-header">
 <td style="vertical-align: middle;">
-    <h2 style="text-align: center;">sign up</h2>
+    <h2 style="text-align: center;"><em>sign up</em></h2>
 </td>
 </div>
 <form class="form-horizontal" method="post" action="registration" modelAttribute="p"  >
@@ -50,7 +50,7 @@
  <div class="form-group">
 <label for="phno" class="col-sm-2 control-label">Phone No*:</label>
 <div class="col-sm-6">
-<input type="text" name="phno" class="form-control datepicker" id="phno" placeholder="Phone No" required="required">
+<input type="number" name="phno" class="form-control datepicker" id="phno" placeholder="Phone No" required="required">
 </div>
 </div>
 
@@ -90,7 +90,7 @@
 <div class="form-group">
 <label for="pincode" class="col-sm-2 control-label">Pin code*:</label>
 <div class="col-sm-6">
-<input type="text" name="pincode" class="form-control" id="pincode" placeholder="Pin code" required="required">
+<input type="number" name="pincode" class="form-control" id="pincode" placeholder="Pin code" required="required">
 </div>
 </div>
 <div class="form-group">
@@ -103,7 +103,7 @@
  
 </div><!-- end for class "row" -->
 </div><!-- end for class "container" -->
-<!-- FOOTER -->
+<%-- <!-- FOOTER -->
       <footer>
         
 <div class="container">
@@ -127,8 +127,8 @@
 
 
     </div><!-- /.container -->
-
-
+ --%>
+<%@include file="footer.jsp" %>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

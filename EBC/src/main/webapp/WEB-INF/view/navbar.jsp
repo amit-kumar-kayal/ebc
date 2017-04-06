@@ -38,7 +38,7 @@
 </head>
 <body>
 <!--<div id="logo"> <img src="${req}/resources/image/ebc.jpg" class="img-responsive" alt="bmlogo"> </div>  -->
-<c:if test="${empty am}">
+<c:if test="${(empty content)&&(empty am)}">
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -60,7 +60,7 @@
 </ul>
 </li>
 <li><a href="${req}/aboutus">About us</a></li>
-<li><a href="${req}/prod">Contact us</a></li>
+<li><a href="${req}/contactus">Contact us</a></li>
 </ul>
 <!-- <form class="navbar-form navbar-left">
       <div class="input-group">
@@ -95,7 +95,7 @@
 </ul>
 </li>
 <li><a href="${req}/aboutus">About us</a></li>
-<li><a href="${req}/prod">Contact us</a></li>
+<li><a href="${req}/contactuss">Contact us</a></li>
 </ul>
 <!--  <form class="navbar-form navbar-left">
       <div class="input-group">
@@ -116,6 +116,40 @@
      </c:if> 
 
 <c:if test="${not empty content}">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+   
+    </div>
+    <ul class="nav navbar-nav">
+    <li class="active"style="font-family:'Sonsie One';"><a href="${req}/home">electronic bazar.com</a></li>
+    
+<li><a href="${req}/home">Home</a></li>
+
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">product <i class="fa fa-angle-down"></i></a>
+<ul class="dropdown-menu">
+ <li><a  href="${req}/userdetails/mobile">mobile</a></li>   
+<li><a href="${req}/userdetails/laptop">laptop</a></li>
+<li><a href="${req}/userdetails/airconditioner">air conditioner</a></li>
+<li><a href="${req}/userdetails/refrigator">refrigator</a></li>
+<li><a href="${req}/userdetails">All product</a></li>
+</ul>
+</li>
+<li><a href="${req}/aboutus">About us</a></li>
+<li><a href="${req}/prod">Contact us</a></li>
+</ul>
+<!-- <form class="navbar-form navbar-left">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form> -->
+
 <ul class="nav navbar-nav navbar-right">
 <li><a href="#">${content}</a></li>
       <li>

@@ -12,4 +12,6 @@ public interface cartdao {
 	public boolean sameproduct(String email,int productid);
 	public List<cart> getallcartbyuser(String mail);
 	public double grantotal(String email);
+	public cart cartbyemail(String email);
+	public void deleteallcartbymail(String mail);
 }

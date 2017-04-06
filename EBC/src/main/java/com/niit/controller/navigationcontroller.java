@@ -44,16 +44,23 @@ public class navigationcontroller {
 		return "signup";
 
 	}
-	@RequestMapping("/thankyou")
+	@RequestMapping("/shipings")
 	public String asama()
 	{
-		return "thankyou";
+		return "shiping";
 
 	}
-//	@RequestMapping("/cart")
-//	public String asamas()
-//	{
-//		return "cart";
-//
-//	}
+	
+	@RequestMapping("/privacy")
+	public String asamasu()
+	{
+		return "privacy";
+
+	}
+	@RequestMapping("/terms")
+	public String asamasua()
+	{
+		return "terms&condition";
+
+	}
 }

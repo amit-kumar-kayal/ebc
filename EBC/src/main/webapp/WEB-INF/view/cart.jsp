@@ -20,10 +20,47 @@ colour:white;
     padding-left: 50%;
      
     }
+    
+.table>tbody>tr>td, .table>tfoot>tr>td{
+    vertical-align: middle;
+}
+@media screen and (max-width: 600px) {
+    table#cart tbody td .form-control{
+		width:20%;
+		display: inline !important;
+	}
+	.actions .btn{
+		width:36%;
+		margin:1.5em 0;
+	}
+	
+	.actions .btn-info{
+		float:left;
+	}
+	.actions .btn-danger{
+		float:right;
+	}
+	
+	table#cart thead { display: none; }
+	table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
+	table#cart tbody tr td:first-child { background: #333; color: #fff; }
+	table#cart tbody td:before {
+		content: attr(data-th); font-weight: bold;
+		display: inline-block; width: 8rem;
+	}
+	
+	
+	
+	table#cart tfoot td{display:block; }
+	table#cart tfoot td .btn{display:block;}
+	
+}
+    
 </style>
 </head>
 <body>
 <%@include file="navbar.jsp" %>
+
 
   <table id="mytable" class="table table-bordred table-striped">
                    
@@ -55,17 +92,28 @@ colour:white;
         </td>
 </tr>
 </c:forEach>
-
-
 </table>
-<div class="carttotal">
-<p style="color:red;"><font size="6">Grand Total </font><font size="5"> = ${s}</font></p>
+<table id="cart" class="table table-hover table-condensed">
+					
+					<tfoot>
+						<tr class="visible-xs">
+							
+							<td class="text-center"><strong>Grand Total= ${s}</strong></td>
+						</tr>
+						<tr>
+							<td><a href="${req}/home" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+							<td colspan="5" class="hidden-xs"></td>
+							<td class="hidden-xs text-center"><strong>Grand Total= ${s}</strong></td>
+							<td><a href="${req}/buy" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+						</tr>
+					</tfoot>
+				</table>
+				
 
-
-
-</div>
+        
+<%@include file="footer.jsp" %>
 </body>
-<!-- FOOTER -->
+<%-- <!-- FOOTER -->
       <footer>
         
 <div class="container">
@@ -85,11 +133,11 @@ colour:white;
 </div>
 </div>
 </div>
+<%@include file="footer.jsp" %>
       </footer>
 
 
     </div><!-- /.container -->
-
-
+ --%>
 
 </html>

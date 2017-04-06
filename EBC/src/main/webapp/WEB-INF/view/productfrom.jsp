@@ -35,19 +35,37 @@ colour:white;
  <div class="form-group">
  <label class="control-label col-sm-2">Product Price:</label>
   <div class="col-sm-10">
-  <input type="text" class="form-control" name="productprice"/><br>
+  <input type="number" class="form-control" name="productprice"/><br>
 </div>
 </div>
-
+<!-- 
  <div class="form-group">
  <label class="control-label col-sm-2">Product Category:</label><br>
   <div class="col-sm-10">
- <input type="radio"  name="category" value="mobile"> Mobile </input> 
- <input type="radio"  name="category" value="laptop">Lap top </input>
- <input type="radio"  name="category" value="airconditioner"> air conditioner </input>
- <input type="radio"  name="category" value="refrigator"> refrigator </input>
+ <select name="category">
+       <option value="mobile">mobile</option>
+	   <option value="laptop">laptop</option>
+	   <option value="airconditioner">Air conditioner</option>
+	   <option value="refrigator">Refregerator</option>										
+      </select>
+
  </div>
- </div>
+</div> -->
+ <div class="form-group">
+                           
+                                <div class="col-sm-2">
+                                <label for="category class="control-label col-sm-6">
+                                Product Category</label>
+                            <select id="category" name="category" class="form-control" required="required">
+                                <option value="na" selected="">Choose One:</option>
+                                <option value="mobile">Mobile</option>
+                                <option value="laptop">Laptop</option>
+                                <option value="airconditioner">Air conditioner</option>
+                                <option value="refrigator">Refregerator</option>	
+                            </select>
+                            </div>
+                             
+                        </div> 
 
 <div class="form-group">
  <label class="control-label col-sm-2">Product Details:</label>
@@ -67,8 +85,8 @@ colour:white;
 </form>
 </div>
 </form:form>
-
-
+<%@include file="footer.jsp" %>
+<%-- 
 <!-- FOOTER -->
       <footer>
         
@@ -93,7 +111,7 @@ colour:white;
 
 
     </div><!-- /.container -->
-
+ --%>
 </body>
 
 </html>

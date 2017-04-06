@@ -196,7 +196,7 @@ public class usercontroller {
 		else{
 			String mail=session.getAttribute("sm").toString();
 			System.out.println(mail);
-			
+			co.setEmail(mail);
 			cod.insert(co);
 			ModelAndView mv=new ModelAndView("forward:/prod");
 			mv.addObject("aflg",  "your complain success Fully lodge ....");
@@ -207,8 +207,21 @@ public class usercontroller {
 		public ModelAndView showProdd(){
 			ModelAndView mv=new ModelAndView("contactus");
 			String mail=session.getAttribute("sm").toString();
+			
 			List<complain>obj=cod.getallcomplainbyuser(mail);
 			mv.addObject("a",obj);
 			return mv;
 		}
+	 @RequestMapping(value="contactuss")
+		public ModelAndView showPros(){
+			ModelAndView mv=new ModelAndView("contactus");
+			List<complain>obj=cod.getall();
+			mv.addObject("a",obj);
+			return mv;
+		}
+	 @RequestMapping(value="deletesu/{n}")
+	 public String deletesaa(@PathVariable("n")int n) {
+	cod.delete(cod.getbyid(n));
+	     return "redirect:/contactuss";
+	 }
 }

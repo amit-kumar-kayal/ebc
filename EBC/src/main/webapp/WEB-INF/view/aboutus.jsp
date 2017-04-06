@@ -12,16 +12,12 @@
 
 <style>
 
- 
-
 .footer {
 color: white;
     background-color:black;
     height: 120px;
 }
-    
 
-    
 </style>
 </head>
 <body>
@@ -43,7 +39,7 @@ color: white;
                    
                 </div>
 <!-- FOOTER -->
-      <footer>
+<%--       <footer>
         
 <div class="container">
 <div class="footer">
@@ -65,7 +61,9 @@ color: white;
       </footer>
 
 
-    </div><!-- /.container -->
+    </div><!-- /.container --> --%>
+    </div>
+    <%@include file="footer.jsp" %>
 
 </body>
 

@@ -1,17 +1,28 @@
 package com.niit.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class complain {
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int complainid;
 	private String email;
 	private String fullname;
 	private long phno;
 	private String company;
 	private String subject;
 	private String message;
+	
+	public int getComplainid() {
+		return complainid;
+	}
+	public void setComplainid(int complainid) {
+		this.complainid = complainid;
+	}
 	public String getEmail() {
 		return email;
 	}

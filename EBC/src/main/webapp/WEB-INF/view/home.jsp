@@ -44,7 +44,7 @@ color: white;
       <!-- Indicators -->
       <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li d"src/main/webapp/WEB-INF/view/home.jsp"ata-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
       <li data-target="#myCarousel" data-slide-to="3"></li>
       <li data-target="#myCarousel" data-slide-to="4"></li>
@@ -122,8 +122,8 @@ color: white;
         </div><!-- /.col-lg-6-->
       </div><!-- /.row -->
             </div>
-
-<!-- FOOTER -->
+<%@include file="footer.jsp" %>
+<%-- <!-- FOOTER -->
       <footer>
         
 <div class="container">
@@ -148,17 +148,6 @@ color: white;
 
 
     </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+ --%>
   </body>
 </html>

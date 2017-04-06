@@ -44,12 +44,12 @@ colour:white;
 <td>${pro.productprice}</td>
 <td>${pro.category}
 <td>
-<a href="editing/${pro.productid}" class="btn btn-info btn-lg">
+<a href="${req}/editing/${pro.productid}" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-edit"></span> Edit
         </a>
         </td>
         <td>
-<a href="delete/${pro.productid}" class="btn btn-info btn-lg">
+<a href="${req}/delete/${pro.productid}" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-trash"></span> delete
         </a>
        
@@ -61,8 +61,9 @@ colour:white;
  <a href="${req}/productfrom" class="btn btn-info btn-lg">
           <span class="glyphicon glyphicon-plus-sign"></span> Add product
         </a>
+        <%@include file="footer.jsp" %>
 </body>
-<!-- FOOTER -->
+<%-- <!-- FOOTER -->
       <footer>
         
 <div class="container">
@@ -88,5 +89,5 @@ colour:white;
     </div><!-- /.container -->
 
 
-
+ --%>
 </html>

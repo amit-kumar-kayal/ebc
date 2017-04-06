@@ -18,13 +18,20 @@ colour:white;
 <body>
 <%@include file="navbar.jsp" %>
 <td style="vertical-align: middle;">
-    <h2 style="text-align: center;">${adminmsg}</h2>
+    <h2 style="text-align: center;"><em>${adminmsg}</em></h2>
 </td>
 <td style="vertical-align: middle;">
-    <p style="text-align: center;">Go to product inventory</p>
+    <p style="text-align: center;"><em>Go to product inventory</em></p>
 </td>
 <center><a class="preview" href="productdetails" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a></center>
-<!-- FOOTER -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%@include file="footer.jsp" %>
+<%-- <!-- FOOTER -->
       <footer>
         
 <div class="container">
@@ -47,6 +54,6 @@ colour:white;
       </footer>
 
 
-    </div><!-- /.container -->
+    </div><!-- /.container --> --%>
 </body>
 </html>

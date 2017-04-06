@@ -52,8 +52,9 @@ colour:white;
 </c:forEach>
 
 </table>
+<%@include file="footer.jsp" %>
 </body>
-<!-- FOOTER -->
+<%-- <!-- FOOTER -->
       <footer>
         
 <div class="container">
@@ -76,7 +77,7 @@ colour:white;
       </footer>
 
 
-    </div><!-- /.container -->
+    </div><!-- /.container --> --%>
 
 
 

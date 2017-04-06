@@ -21,25 +21,47 @@ colour:white;
 <body>
 <%@include file="navbar.jsp" %>
 <form:form action="${req}/edit" method="post" modelAttribute="p" enctype="multipart/form-data">
-File to upload: <input type="file" name="File"value={"${req}/resources/images/product/${pro.productid}.jpg">
-<input type="hidden" class="form-control"  name="productid"value=${p.productid}><br>
-name:
-<input type="text" class="form-control"  name="productname"value=${p.productname}><br>
-price:
-<input type="text" class="form-control"  name="productprice"value=${p.productprice}><br>
-category:<br>
- <input type="radio"  class="form-control"  name="category" value=${p.category}> Mobile <br>
-  <input type="radio" class="form-control"  name="category" value=${p.category}>Lap top<br>
-  <input type="radio" class="form-control"  name="category" value=${p.category}> air conditioner <br> 
- <input type="radio" class="form-control"  name="category" value=${p.category}> refrigerator<br>
- Description :
-<input type="text" class="form-control" name="productdesc"value=${p.productdesc}><br>
-<input type="submit" value="Update">
- 
-</form:form>
+<input type="hidden" name="productid" value="${p.productid}"><br>
+<div class="form-group">
+ <label class="control-label col-sm-2">Product Name:</label>
+  <div class="col-sm-10">
+<input type="text" class="form-control" name="productname" value="${p.productname}"><br>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-2">Product Price:</label>
+ <div class="col-sm-10">
+<input type="text" class="form-control" name="productprice" value="${p.productprice}"><br>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-2">Product Category:</label>
+<div class="col-sm-10">
+ <input type="text" class="form-control" name="category" value="${p.category}"><br>
+ </div>
+ </div>
+  <div class="form-group">
+  <label class="control-label col-sm-2">Product Description :</label>
+<div class="col-sm-10">
+<input type="text" class="form-control" name="productdesc" value="${p.productdesc}"><br>
+</div>
+</div>
+<div class="form-group">
+<label class="control-label col-sm-2">File to upload:</label>
+<div class="col-sm-10">
+<input type="file" class="form-control"  name="File"/><br>
+</div>
+</div>
+<br>
+<div class="form-group ">
 
+<center><input type="submit" value="Update" class="btn btn-primary"></center>
+
+</div>
+</form:form>
+<%@include file="footer.jsp" %>
 </body>
-<!-- FOOTER -->
+<%-- <!-- FOOTER -->
       <footer>
         
 <div class="container">
@@ -62,5 +84,5 @@ category:<br>
       </footer>
 
 
-    </div><!-- /.container -->
+    </div><!-- /.container --> --%>
 </html>

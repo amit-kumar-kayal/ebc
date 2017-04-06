@@ -17,6 +17,7 @@
 </head>
 <body>
 <%@include file="navbar.jsp" %>
+<c:if test="${(empty content)&&(empty am)}">
 <td style="vertical-align: middle;">
     <h2 style="text-align: center;">${bflg}</h2>
 </td>
@@ -61,8 +62,8 @@ Email Address:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cf
 <input type="text" name="fullname" class="form-control" required="required">
 </div>
 <div class="form-group">
-<label>Email *</label>
-<input type="email" name="email" class="form-control" required="required">
+<label></label>
+<input type="hidden" name="email" class="form-control" required="required">
 </div>
 <div class="form-group">
 <label>Phone</label>
@@ -91,6 +92,84 @@ Email Address:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cf
 </div> 
 </section>
 <div>
+</c:if>
+<c:if test="${not empty content}">
+<td style="vertical-align: middle;">
+    <h2 style="text-align: center;">${bflg}</h2>
+</td>
+<td style="vertical-align: middle;">
+    <h2 style="text-align: center;">${aflg}</h2>
+</td>
+ <section id="contact-info">
+<div class="center">
+<h2>How to Reach Us?</h2>
+<p class="lead">Executive service 24*7 </p>
+</div>
+
+<ul class="row">
+<li class="col-sm-6">
+<address>
+<h5>Head Office</h5>
+<p>c-253 Ram das hati bhandari para<br>
+ garden reach kolkata 700024</p>
+<p>Phone:670-898-2847 <br>
+Email Address:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2940474f46694d4644484047074a4644">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></p>
+</address>
+
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>  
+  <section id="contact-page">
+<div class="container">
+<div class="center">
+<h2>Drop Your Message</h2>
+<p class="lead">have any complain and fidback </p>
+</div>
+<div class="row contact-wrap">
+<div class="status alert alert-success" style="display: none"></div>
+<form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="complain">
+<div class="col-sm-5 col-sm-offset-1">
+<div class="form-group">
+<label>Name *</label>
+<input type="text" name="fullname" class="form-control" required="required">
+</div>
+<div class="form-group">
+<label></label>
+<input type="hidden" name="email" class="form-control" required="required">
+</div>
+<div class="form-group">
+<label>Phone</label>
+<input type="number" name="phno" class="form-control">
+</div>
+<div class="form-group">
+<label>Company Name</label>
+<input type="text" name="company" class="form-control">
+</div>
+</div>
+<div class="col-sm-5">
+<div class="form-group">
+<label>Subject *</label>
+<input type="text" name="subject" class="form-control" required="required">
+</div>
+<div class="form-group">
+<label>Message *</label>
+<textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+</div>
+<div class="form-group">
+<button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+</div>
+</div>
+
+</form>
+</div> 
+</div> 
+</section>
+<div>
+
 <div class="container">
 <div class="row">
 <div class="page-header">
@@ -102,7 +181,30 @@ Email Address:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cf
 <td>${pro.message}</td>
 </c:forEach>
 </div>
-<!-- FOOTER -->
+</c:if>
+<c:if test="${not empty am}">
+<table id="mytable" class="table table-bordred table-striped">
+                   
+                   <thead>
+                   <th>Email</th>
+                    <th>Message</th>
+                    </thead>
+<c:forEach items="${a}" var="pro">
+<tr>
+<td>${pro.email}</td>
+<td>${pro.message}</td>
+ <td>
+<a href="${req}/deletesu/${pro.complainid}" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-trash"></span> delete
+        </a>
+       
+</td>
+</tr>
+</c:forEach>
+       
+</table>
+</c:if>
+<%-- <!-- FOOTER -->
       <footer>
         
 <div class="container">
@@ -126,8 +228,8 @@ Email Address:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cf
 
 
     </div><!-- /.container -->
-
-
+ --%>
+<%@include file="footer.jsp" %>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

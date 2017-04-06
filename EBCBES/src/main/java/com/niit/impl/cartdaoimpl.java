@@ -67,6 +67,20 @@ public class cartdaoimpl implements cartdao {
 		
 	}
 
+	public cart cartbyemail(String email) {
+		
+		return  (cart)sessionFactory.getCurrentSession().get(cart.class, email);
+	}
+
+	public void deleteallcartbymail(String mail) {
+		List<cart>o=getallcartbyuser(mail);
+		for(cart o2:o)
+		{
+			sessionFactory.getCurrentSession().delete(o2);
+		}
+		
+	}
+
 	
 	}
 

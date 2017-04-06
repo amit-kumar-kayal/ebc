@@ -30,4 +30,14 @@ public class complaindaoimpl implements complaindao {
 		return obj;
 	}
 
+	public void delete(complain c) {
+		sessionFactory.getCurrentSession().delete(c);
+		
+	}
+
+	public complain getbyid(int id) {
+
+		return (complain)sessionFactory.getCurrentSession().get(complain.class,id);
+	}
+
 }

@@ -19,13 +19,13 @@
 <body>
 <%@include file="navbar.jsp" %>
 <td style="vertical-align: middle;">
-    <h2 style="text-align: center;">${errormessage}</h2>
+    <h2 style="text-align: center;"><em>${errormessage}</em></h2>
 </td>
 <div class="container">
 <div class="row">
 <div class="page-header">
 <td style="vertical-align: middle;">
-    <h2 style="text-align: center;">Sign In</h2>
+    <h2 style="text-align: center;"><em>Sign In</em></h2>
 </td>
 </div>
 <form:form class="form-horizontal" method="post" action="sign"  >
@@ -51,7 +51,7 @@
 </div>
  
 </form:form>
-<!-- FOOTER -->
+<%-- <!-- FOOTER -->
       <footer>
         
 <div class="container">
@@ -74,7 +74,8 @@
       </footer>
 
 
-    </div><!-- /.container -->
+    </div><!-- /.container --> --%>
+    <%@include file="footer.jsp" %>
 
 
     <!-- Bootstrap core JavaScript
